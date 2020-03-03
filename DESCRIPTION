@@ -1,5 +1,5 @@
 Package: RWDataPlyr
-Version: 0.6.2
+Version: 0.6.3
 Title: Read and Manipulate Data from 'RiverWare'
 Description: A tool to read and manipulate data generated from 'RiverWare'(TM) 
     <http://www.riverware.org/> simulations. 'RiverWare' and 'RiverSMART' 
@@ -22,12 +22,13 @@ Copyright: This software is in the public domain because it contains
         Reclamation, an agency of the U.S. Department of Interior.
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
+Encoding: UTF-8
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2018-08-15 15:17:20 UTC; RAButler
+Packaged: 2020-03-03 04:11:03 UTC; RAButler
 Author: Alan Butler [aut, cre],
   Cameron Bracken [aut]
 Maintainer: Alan Butler <rabutler@usbr.gov>
 Repository: CRAN
-Date/Publication: 2018-08-16 11:40:10 UTC
+Date/Publication: 2020-03-03 05:40:02 UTC
