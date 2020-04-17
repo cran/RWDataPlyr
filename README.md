@@ -1,11 +1,13 @@
 RWDataPlyr
 =================
 
-
+<!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/RWDataPlyr)](https://cran.r-project.org/package=RWDataPlyr)
-[![Travis-CI Build Status](https://travis-ci.org/BoulderCodeHub/RWDataPlyr.svg?branch=master)](https://travis-ci.org/BoulderCodeHub/RWDataPlyr)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/BoulderCodeHub/RWDataPlyr?branch=master&svg=true)](https://ci.appveyor.com/project/BoulderCodeHub/RWDataPlyr)
+
+[![R build status](https://github.com/BoulderCodeHub/RWDataPlyr/workflows/R-CMD-check/badge.svg)](https://github.com/BoulderCodeHub/RWDataPlyr/actions)
+
 [![codecov](https://codecov.io/gh/BoulderCodeHub/RWDataPlyr/branch/master/graphs/badge.svg)](https://codecov.io/gh/BoulderCodeHub/RWDataPlyr)
+<!-- badges: end -->
 
 ## Overview
 
@@ -51,7 +53,8 @@ vignette("rwdataplyr-workflow", package = "RWDataPlyr")
 ```
 
 ## Log
-* 2020-02-28: version 0.6.3 available
+* 2020-04-17: version 0.6.4 available
+* 2020-03-03: version 0.6.3 available
 * 2018-08-16: version 0.6.2 available (first version available on CRAN)
 * 2018-06-07: version 0.6.1 available
 * 2018-04-10: version 0.6.0 available

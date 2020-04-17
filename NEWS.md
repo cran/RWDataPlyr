@@ -1,6 +1,13 @@
+# RWDataPlyr 0.6.4
+
+*Released April 17, 2020*
+
+* Updated to be compatible with dplyr v1.0.0
+* Removed all uses of `dplyr::funs()` as it was deprecated in dplyr v0.8.0
+
 # RWDataPlyr 0.6.3
 
-*Releases February 28, 2020*
+*Released March 3, 2020*
 
 ## Bug Fixes
 

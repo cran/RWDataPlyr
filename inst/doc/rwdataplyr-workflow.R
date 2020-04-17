@@ -1,4 +1,4 @@
-## ----setup, include = FALSE----------------------------------------------
+## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
 ## ---- rwFlowChart, fig.cap="RiverWare and RiverSMART output flow chart. Part A shows a single RiverWare run; part B shows how RiverSMART wraps individual RiverSMART runs to produce output, with those output becoming input to RiverSMART for post-processing. The color of the file extensions correspond to the color of the functions that read those file types; yellow indicates that reading NetCDF files is not yet supported by RWDataPlyr.", echo=FALSE----
 knitr::include_graphics("RiverWareFlowChart.png")
 
-## ----oneScen-------------------------------------------------------------
+## ----oneScen------------------------------------------------------------------
 library(RWDataPlyr)
 suppressPackageStartupMessages(library(dplyr))
 rdf <- read_rdf(system.file(
@@ -23,7 +23,7 @@ rdf %>%
   rdf_get_slot("Mead.Pool Elevation") %>%
   rwslot_annual_min()
 
-## ----csvExmpl------------------------------------------------------------
+## ----csvExmpl-----------------------------------------------------------------
 library(tidyr)
 read_rw_csv(system.file(
   "extdata/Scenario/ISM1988_2014,2007Dems,IG,Most/KeySlots.csv",
@@ -35,7 +35,7 @@ read_rw_csv(system.file(
   spread(TraceNumber, Value) %>%
   as.data.frame()
 
-## ----customSummer--------------------------------------------------------
+## ----customSummer-------------------------------------------------------------
 summer <- function() 
 {
   list(
@@ -45,7 +45,7 @@ summer <- function()
   )
 }
 
-## ----customWinter--------------------------------------------------------
+## ----customWinter-------------------------------------------------------------
 djf <- function()
 {
   djf_convert <- function(rwtbl)
@@ -53,11 +53,10 @@ djf <- function()
     rwtbl %>%
       dplyr::mutate_at(
         "Timestep", 
-        .funs = dplyr::funs("ym" = zoo::as.yearmon)
+        .funs = list("Year" = zoo::as.yearmon)
       ) %>%
       # can use the ym_get_wateryear b/c djf are all in same water year
-      dplyr::mutate_at("ym", .funs = dplyr::funs("Year" = ym_get_wateryear)) %>%
-      dplyr::select(-dplyr::one_of("ym"))
+      dplyr::mutate_at("Year", list(ym_get_wateryear)) 
   }
   
   list(
@@ -68,7 +67,7 @@ djf <- function()
   
 }
 
-## ----echo=FALSE, results="asis"------------------------------------------
+## ----echo=FALSE, results="asis"-----------------------------------------------
 knitr::kable(data.frame(
   file = c(rep("KeySlots.rdf", 5), "SystemConditions.rdf"),
   slot = c(
@@ -88,7 +87,7 @@ knitr::kable(data.frame(
                "powellWyRel", "short")
 ))
 
-## ----rwdAgg--------------------------------------------------------------
+## ----rwdAgg-------------------------------------------------------------------
 rwa1 <- rwd_agg(data.frame(
   file = c(rep("KeySlots.rdf", 5), "SystemConditions.rdf"),
   slot = c(
@@ -105,7 +104,7 @@ rwa1 <- rwd_agg(data.frame(
   stringsAsFactors = FALSE
 ))
 
-## ----rdfAgg--------------------------------------------------------------
+## ----rdfAgg-------------------------------------------------------------------
 rdf_aggregate(
   rwa1,
   rdf_dir = system.file(
@@ -114,7 +113,7 @@ rdf_aggregate(
   )
 )
 
-## ----rdfAgg2-------------------------------------------------------------
+## ----rdfAgg2------------------------------------------------------------------
 rdf_aggregate(
   rwa1,
   rdf_dir = system.file(
@@ -127,7 +126,7 @@ rdf_aggregate(
 ## ----dirStruct, results="asis",fig.cap="Sample directory structure", echo=FALSE----
 knitr::include_graphics("dir_structure.png")
 
-## ----scenAgg`------------------------------------------------------------
+## ----scenAgg`-----------------------------------------------------------------
 my_scens <-c("ISM1988_2014,2007Dems,IG,Most", "ISM1988_2014,2007Dems,IG,2002")
 names(my_scens) <- c("most", "yr2002")
 scen_res <- rw_scen_aggregate(
