@@ -1,8 +1,8 @@
 Package: RWDataPlyr
-Version: 0.6.4
+Version: 0.6.5
 Title: Read and Manipulate Data from 'RiverWare'
 Description: A tool to read and manipulate data generated from 'RiverWare'(TM) 
-    <http://www.riverware.org/> simulations. 'RiverWare' and 'RiverSMART' 
+    <https://www.riverware.org/> simulations. 'RiverWare' and 'RiverSMART' 
     generate data in "rdf", "csv", and "nc" format. This package provides an 
     interface to read, aggregate, and summarize data from one or more 
     simulations in a 'dplyr' pipeline.
@@ -12,23 +12,23 @@ Authors@R: c(
     )
 URL: https://github.com/BoulderCodeHub/RWDataPlyr
 BugReports: https://github.com/BoulderCodeHub/RWDataPlyr/issues
-Depends: R (>= 3.3.0)
+Depends: R (>= 3.5)
 Imports: data.table (>= 1.10.0), dplyr (>= 0.7.0), methods, stats,
         tibble, tidyr, tools, utils, feather, xts, zoo, Rcpp
-Suggests: bookdown, knitr, rmarkdown, testthat, covr
+Suggests: bookdown, knitr, rmarkdown, testthat, covr, stringi
 License: CC0
 Copyright: This software is in the public domain because it contains
         materials that originally came from the U.S. Bureau of
         Reclamation, an agency of the U.S. Department of Interior.
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.3
 Encoding: UTF-8
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2020-04-16 22:05:45 UTC; RAButler
+Packaged: 2025-12-01 22:28:32 UTC; RAButler
 Author: Alan Butler [aut, cre],
   Cameron Bracken [aut]
 Maintainer: Alan Butler <rabutler@usbr.gov>
 Repository: CRAN
-Date/Publication: 2020-04-17 08:20:06 UTC
+Date/Publication: 2025-12-01 22:50:02 UTC

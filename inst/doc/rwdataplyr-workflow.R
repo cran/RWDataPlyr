@@ -4,7 +4,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- rwFlowChart, fig.cap="RiverWare and RiverSMART output flow chart. Part A shows a single RiverWare run; part B shows how RiverSMART wraps individual RiverSMART runs to produce output, with those output becoming input to RiverSMART for post-processing. The color of the file extensions correspond to the color of the functions that read those file types; yellow indicates that reading NetCDF files is not yet supported by RWDataPlyr.", echo=FALSE----
+## ----rwFlowChart, fig.cap="RiverWare and RiverSMART output flow chart. Part A shows a single RiverWare run; part B shows how RiverSMART wraps individual RiverSMART runs to produce output, with those output becoming input to RiverSMART for post-processing. The color of the file extensions correspond to the color of the functions that read those file types; yellow indicates that reading NetCDF files is not yet supported by RWDataPlyr.", echo=FALSE----
 knitr::include_graphics("RiverWareFlowChart.png")
 
 ## ----oneScen------------------------------------------------------------------
